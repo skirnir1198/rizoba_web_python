@@ -6,7 +6,9 @@ import humanic
 import goodman
 import time
 
-app = Flask( __name__, static_folder="../",)
+# app = Flask( __name__, static_folder="../",)
+app = Flask(__name__,)
+
 
 @app.route('/')
 def index():
@@ -31,6 +33,13 @@ def next():
     return render_template('search_result.html',dive_result=results[0],humanic_result=results[1],goodman_result=results[2])
     # return render_template('search_result.html',dive_result=results[0])
 
+
+def login():
+    return render_template('login.html')
+
+@app.route("/login", methods=["POST"])
+def login():
+    return render_template("login.html")
 
 if __name__ == "__main__":
     app.run(debug=True, threaded=True)

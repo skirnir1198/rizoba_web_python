@@ -6,10 +6,10 @@
  <meta name="description" content="ディスクリプションを入力">
 
  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
- <link rel="stylesheet" href="../static/css/index.css"/>
- <link rel="stylesheet" href="../static/css/header.css"/>
- <link rel="stylesheet" href="../static/css/footer.css"/>
- <link rel="stylesheet" href="../static/css/main.css"/>
+ <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='css/index.css')}}">
+ <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='css/header.css')}}">
+ <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='css/footer.css')}}">
+ <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='css/main.css')}}">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.2/themes/fontawesome-stars.css">
  
@@ -33,7 +33,16 @@
       <div class="img_box"><img src="../static/image/Spinner-3.gif" alt="" class="fadeUp"></div>
     </div>
   </div>
-  <div id="header">  <!-- ヘッダー -->  </div>
+  <div id="header">
+    <div class="hamburger-menu">
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+        </div>    
+          <div class="hamburger-list"></div>
+        <div class="icon">
+          <img src="../static/image/splash.png">
+        </div>
+    <div id="post"></div>
+  </div>
   <!-- menu ------------------------------ -->
   <div class="menu">
   <nav>
@@ -44,12 +53,15 @@
   </nav>
 </div>
  <div id="main">
-  <div id="bottom">
-    <div id="postList"></div>
-  </div>
-  <div id="footer"> <!-- footer.html読み込み --> </div>
+    {%- block content %}{% endblock %}
+<div id="footer"> 
+    <img src="{{ url_for('static', filename='image/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg') }}" style="margin-left: 8px;" id="android_badge" height="28">
+    <img src="{{ url_for('static', filename='image/Google_Play_Badge_JA.svg') }}" id="ios_badge" height="28">
+    <p style="font-size: .8px;">© 2023 Rinfo Rights Reserved</p>
+</div>
  </div>
- <script src="../static/js/header.js"></script>
- <script src="../static/js/index.js"></script>
+ <script src="{{ url_for('static', filename='js/footer.js')}}"></script>
+ <script src="{{ url_for('static', filename='js/header.js')}}"></script>
+ <script src="{{ url_for('static', filename='js/index.js')}}"></script>
  </body>
 </html>

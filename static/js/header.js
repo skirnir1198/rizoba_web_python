@@ -40,7 +40,11 @@
         `<ul>
         <li id="close"><i class="fa-solid fa-xmark fa-2xl"></i></li>
         <li id="menu_li"><h5 class="top menu_btn"><i class="fa-solid fa-house"></i>TOP</h5></li>
-        <li id="menu_li"><h5 class="login menu_btn"><i class="fa-solid fa-right-to-bracket"></i>ログイン</h5></li>
+        <li id="menu_li">
+          <form action="/login" method="POST">
+            <i class="fa-solid fa-right-to-bracket"></i><input type="submit" value="ログイン">
+          </form>
+        </li>
         <li id="menu_li"><h5 class="sign_up menu_btn"><i class="fa-solid fa-user-plus"></i>新規登録</h5></li>
         <li id="menu_li"><h5 class="test menu_btn"><i class="fa-solid fa-file-lines"></i>診断テスト</h5></li>
         <li id="menu_li"><h5 class="inquiry menu_btn"><i class="fa-regular fa-circle-question"></i>お問い合わせ</h5></li>
@@ -68,9 +72,9 @@
     });
 
     // ログイン
-    $(document).on('click', '.login', function () {
-      window.location.href = 'login.html';
-    });
+    // $(document).on('click', '.login', function () {
+    //   window.location.href = '/login.html';
+    // });
 
     // 新規登録
     $(document).on('click', '.sign_up', function () {

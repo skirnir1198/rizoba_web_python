@@ -13,10 +13,10 @@
       db.collection('config').doc('5flwSgo6T0Bd7M9vV7ho').update({
         'web_view': data.get('web_view')+1,
     });
-    $.ajaxSetup({cache:false});
-    $("#header").load("../header.html");
-    $.ajaxSetup({cache:false});
-    $("#footer").load("../footer.html");
+    // $.ajaxSetup({cache:false});
+    // $("#header").load("../header.html");
+    // $.ajaxSetup({cache:false});
+    // $("#footer").load("../footer.html");
 
     // アルバム存在確認 ------------------------------------------------------------
     // const item = await db.collection("user").get();
