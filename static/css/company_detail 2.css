@@ -1,0 +1,169 @@
+#main {
+  margin: 20px 0 40px 0;
+}
+
+#top {
+  /* 子要素のタイトルを aboslute 配置するため必要 */
+  padding: 20px;
+  max-width: 600px;
+}
+
+#userInfo {
+  display: flex;
+  margin-bottom: 20px;
+}
+#top .userName {
+  padding-left: 12px;
+  line-height: 50px;
+}
+
+#userInfo img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; 
+}
+
+#postData {
+  background-color: #fff;
+  text-align: center;
+  height: auto;
+  margin:auto;
+  padding: 20px 40px 60px 60px;
+  border: 1px solid grey;
+  box-shadow: 0 0 8px gray;
+  position: relative;
+}
+
+#company {
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+#childPost {
+  width: 60%;
+}
+
+#rating {
+  padding-top: 20px;
+  display:inline-block;
+  display: flex;
+  justify-content: center; /*左右中央揃え*/
+  align-items: center;     /*上下中央揃え*/
+}
+
+#rating img {
+  width: 20px;
+}
+
+#rating h4 {
+  height:60px;
+  width: 60px;
+  line-height:60px;
+}
+
+#rating h6 {
+  height:60px;
+  width: 100px;
+  line-height:60px;
+}
+
+h6 {
+  display: inline;
+}
+
+#comment {
+  margin-top: 60px;
+  text-align: left;
+}
+
+.grey_font {
+  color: #515151;
+}
+
+.menu {
+  position: absolute;
+  top:10px;
+  right:10px;
+}
+
+.menu li {
+  list-style: none;
+  text-align: left;
+  padding: 10px;
+}
+
+.menu i:hover {
+  cursor: pointer;
+}
+
+.menu li a {
+  display: block;
+  width: 220px;
+  padding: 10px;
+}
+
+.menu ul {
+  display: none;
+  width: 220px;
+}
+
+.select_menu {
+  border: solid 1px #000;
+  border-radius: 4px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #fff;
+}
+
+.select_menu li:hover {
+  cursor: pointer;
+}
+
+.select_menu i {
+  padding-right: 10px;
+}
+
+.fa-pen, .fa-flag {
+  color: coral;
+  display: inline;
+}
+
+.fa-trash, .fa-ban {
+  color: red;
+}
+
+.select_menu h4 {
+  display: inline;
+}
+
+/* ブロックダイアログ */
+.noTitleDialog .ui-dialog-titlebar {
+  display:none;
+}
+
+@media screen and (min-width: 481px) {
+	/* 481px以上に適用されるCSS（タブレット用） */
+  #top {
+    margin: 20px auto;
+    width: 80%;
+  }
+}
+@media screen and (min-width: 960px) {
+	/* 960px以上に適用されるCSS（PC用） */
+  #main {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin: 20px 0 40px 0;
+  }
+
+  #postData {
+    width: 500px;
+  }
+
+  #company {
+    font-size: 1.5em;
+  }
+}

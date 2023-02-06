@@ -1,0 +1,88 @@
+#top {
+  padding: 20px 0 50px 0;
+}
+
+.title_font {
+  text-align: center;
+}
+
+.box {
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 0 40px 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.btn p {
+  margin: 0 auto;
+}
+
+#mail_btn {
+  width: 210px;
+  text-align:center;
+  height:40px;
+  line-height:40px;
+  margin: 40px auto;
+  background-color: #bababa;
+  color: #000;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.firebaseui-card-content form{
+  width: 210px;
+}
+
+#appleid-signin {
+  width: 210px;
+  height: 40px;
+  margin: 0 auto 20px
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.login {
+  margin-top: 60px;
+}
+
+form {
+  margin: auto;
+}
+
+.login {
+  color: grey;
+  font-family: 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
+}
+
+.login:hover {
+  color: #6cb226;
+}
+
+@media screen and (min-width: 481px) {
+	/* 481px以上に適用されるCSS（タブレット用） */
+  .box {
+    width: 600px; 
+    border: 1px solid grey;
+    border-radius: 20px;
+    box-shadow: 0 3px 25px 0 rgba(0, 0, 0, .5);
+  }
+
+  .login {
+    margin-top: 100px;
+  }
+}
+@media screen and (min-width: 960px) {
+	/* 960px以上に適用されるCSS（PC用） */
+  .box {
+    width: 400px; 
+    border: 1px solid grey;
+    border-radius: 20px;
+    box-shadow: 0 3px 25px 0 rgba(0, 0, 0, .5);
+  }
+}

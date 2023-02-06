@@ -1,0 +1,156 @@
+#main {
+  width: 100%;
+}
+
+#loading {
+  display: none;
+}
+
+
+#content {
+  padding-bottom: 100px;
+  overflow-y: scroll;
+}
+
+.box {
+  margin: 20px auto 0;
+  text-align: center;
+  padding: 20px 20px 40px 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+/*スクロールバー非表示（Chrome・Safari）*/
+#content::-webkit-scrollbar {
+  display:none;
+}
+
+#title {
+  padding-bottom: 30px;
+}
+
+.title_font {
+  text-align: center;
+}
+
+.btn p {
+  margin: 0 auto;
+}
+
+#mail_btn {
+  width: 210px;
+  text-align:center;
+  height:40px;
+  line-height:40px;
+  margin: 20px auto;
+  background-color: gray;
+  color: #000;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.firebaseui-card-content form{
+  width: 210px;
+}
+
+#appleid-signin {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 7px;
+  width: 210px;
+  margin: auto;
+}
+
+#appleid-signin:hover {
+  cursor: pointer;
+}
+
+.label {
+  text-align: left;
+}
+
+input {
+  width: 100%;
+  height: 1.8em;
+}
+
+#input {
+  border-top: solid 1px grey;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+
+#input_form {
+  width: 60%;
+  margin: 10px  auto 20px;
+  position: relative;
+}
+
+/* パスワード表示アイコン */
+.toggle-pass{
+  position:absolute;
+  top: 73%;
+  right: 8px;
+  transform: translateY(-50%);
+}
+
+#sign_in {
+  margin: auto;
+  background-color: #7fc53a;
+  border-radius: 10px;
+  padding: 4px;
+  width: 60%;
+  text-align: center;
+}
+
+#sign_in:hover {
+  cursor: pointer;
+  background-color: #aedb82;
+}
+
+form {
+  margin: auto;
+}
+
+@media screen and (min-width: 481px) {
+	/* 481px以上に適用されるCSS（タブレット用） */
+
+  #main {
+    margin-bottom: 300px;
+  }
+  
+  .box {
+    padding: 20px;
+    border: 1px solid grey;
+    border-radius: 20px;
+    width: 600px; 
+    box-shadow: 0 3px 25px 0 rgba(0, 0, 0, .5);
+  }
+}
+@media screen and (min-width: 960px) {
+	/* 960px以上に適用されるCSS（PC用） */
+
+  #main {
+    margin-bottom: 300px;
+  }
+  
+  .box {
+    padding: 20px;
+    border: 1px solid grey;
+    border-radius: 20px;
+    width: 400px; 
+    box-shadow: 0 3px 25px 0 rgba(0, 0, 0, .5);
+  }
+
+  #input_form {
+    margin: 10px  auto 30px;
+  }
+  
+}

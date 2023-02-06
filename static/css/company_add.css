@@ -1,0 +1,80 @@
+body {
+  overflow-y: scroll;
+}
+
+/*スクロールバー非表示（Chrome・Safari）*/
+body::-webkit-scrollbar{
+  display:none;
+}
+
+#main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  height: auto;
+  width: 90%;
+  text-align: center;
+  margin: 100px auto;
+}
+
+
+#add_btn {
+  width: 100px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  padding: 4px 16px;
+  margin: auto;
+  border-radius: 4px;
+  background-color: #7fc53a;
+  border: 1px solid #6cb226;
+  margin-top: 20px;
+}
+
+/* セレクトボックス */
+select {
+  min-width: 200px;
+}
+
+#add_btn:hover {
+  cursor: pointer;
+}
+
+#rating h6, #comment_text {
+  margin-top: 20px;
+}
+
+#comment {
+  padding: 4px;
+  width: 80%;
+}
+
+@media screen and (min-width: 481px) {
+	/* 481px以上に適用されるCSS（タブレット用） */
+  #main {
+    width: 600px;
+    border: solid 1px grey;
+    border-radius: 10px;
+    padding: 40px;
+  }
+
+  select {
+    height: 40px;
+  }
+
+  #rating img {
+    width: 24px;
+  }
+
+  h6 {
+    padding: 20px 0 10px 0;
+  }
+}
+@media screen and (min-width: 960px) {
+	/* 960px以上に適用されるCSS（PC用） */
+  #main {
+    border: solid 1px grey;
+    border-radius: 10px;
+  }
+}

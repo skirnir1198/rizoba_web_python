@@ -1,0 +1,184 @@
+body {
+  overflow-x: scroll;
+}
+
+/*スクロールバー非表示（Chrome・Safari）*/
+body::-webkit-scrollbar{
+  display:none;
+}
+
+#main {
+  padding: 100px 0;
+}
+
+#userInfo {
+  height: fit-content;
+  max-width: 600px;
+  margin: 0px auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#select_photo {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+#profile, #select_photo img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid grey;
+}
+
+#select_photo:hover {
+  opacity: .6;
+  cursor: pointer;
+}
+
+#icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#icon:hover  {
+  cursor: pointer;
+}
+
+label {
+  margin-top: 40px;
+  text-align: left;
+}
+
+#target {
+  color: #B20000;
+  font-size: 20px;
+  display:none;
+}
+
+#userName{
+  padding: 4px;
+  height: 24px;
+  width: 50%;
+  transition: all .6s ease;
+  border: 1px solid #cccccc;
+  border-radius:4px;
+}
+#userName:focus{
+  border: 1px solid green;
+}
+
+#comment {
+  width: 95%;
+  height: calc( 1.8em * 5 );
+  line-height: 1.8;
+  transition: all .6s ease;
+  border: 1px solid #cccccc;
+  border-radius:4px;
+  text-align: left;
+  padding: 10px;
+  overflow-wrap:break-word;
+}
+
+#comment:focus{
+  border: 1px solid green;
+}
+
+i {
+  margin: 0 0 0 auto;
+  color: grey;
+}
+
+#update {
+  margin: 20px auto;
+  padding: 4px 0;
+  background-color: #6cb226;
+  color: #ffffff;
+  font-size: 1.3em;
+  font-weight: 300;
+  position: relative;
+  outline: none;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 40px;
+  width: 200px;
+}
+
+#update:hover {
+  background-color: #7fc53a;
+}
+
+#birth {
+  margin-top: 20px;
+}
+
+#select {
+  display: flex;
+}
+
+select {
+  width: 70px;
+  margin-right: 4px;
+}
+
+select:hover {
+  cursor: pointer;
+}
+
+#radio {
+  flex-direction: row;
+  text-align: left;
+}
+
+.radio:hover {
+  cursor: pointer;
+}
+
+/* アカウント削除ボタン */
+#delete_account {
+  margin: 20px auto;
+  color:grey;
+  text-align: center;
+}
+
+#delete_account:hover {
+  cursor: pointer;
+} 
+
+@media screen and (min-width: 481px) {
+	/* 481px以上に適用されるCSS（タブレット用） */
+  #userInfo {
+    max-width: 800px;
+    min-width: 400px;
+    margin: 0px auto;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 960px) {
+	/* 960px以上に適用されるCSS（PC用） */
+  #main {
+    padding: 100px 0;
+    margin-bottom: 300px;
+  }
+  #userInfo {
+    max-width: 600px;
+    min-width: 400px;
+    margin: 0px auto;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+}

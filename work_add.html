@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+ <meta charset="utf-8">
+ <title>就業先詳細ページ</title>
+ <meta name="description" content="ディスクリプションを入力">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="css/work_add.css"/>
+ <link rel="stylesheet" href="css/header.css"/>
+ <link rel="stylesheet" href="css/footer.css"/>
+ <link rel="stylesheet" href="css/main.css"/>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.2/themes/fontawesome-stars.css">
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
+ <!-- [if lt IE 9] -->
+ <!-- <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+ <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script> -->
+ <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+ <script src="raty-3.1.0/lib/jquery.raty.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-storage.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-analytics.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
+ <script src="js/firebase_config.js"></script>
+ <script src="js/main.js"></script>
+
+ <!-- [endif] -->
+ 
+ </head>
+ <body>
+  <div id="loading">
+    <div class="kvArea" id="loading_box">
+      <div class="img_box"><img src="image/Spinner-3.gif" alt="" class="fadeUp"></div>
+    </div>
+  </div>
+ <div id="header">  <!-- ヘッダー -->  </div>
+ <div id="main">
+  <div id="content">
+    <!-- area -->
+    <div id="area">
+      <h6>エリア</h6>
+      <select name="area" id="selectArea"></select>
+      <select name="detailArea" id="selectDetailArea"></select>
+    </div>
+    <!-- industry -->
+    <div id="industry">
+      <div id="flex">
+        <h6>業種</h6>
+      </div>
+      <div id="input_box">
+        <select name="industry" id="selectOccupation"></select>
+        <div id="occupation_add" class="noHide"><i id="add_icon" class="fa fa-plus-circle" aria-hidden="true"></i></div>
+        <div id="occupation_minus" class="hide">
+          <label for="comment" id="detail"><p id="detail">詳細</p></label><input type="text" value="" id="occupation_detail" name="name" required minlength="4" maxlength="12" size="10"><i id="minus_icon" class="fa fa-minus-circle" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+    <!-- company -->
+    <div id="company">
+      <h6>派遣会社</h6>
+      <select name="company" id="selectCompany"></select>
+    </div>
+    <!-- period -->
+    <div id="period">
+      <h6 id="period_text">期間</h6>
+      <input type="checkbox" id="period_check" name="period_check"><label for="period_check"><h6>非公開</h6></label>
+      <div id="work_period">
+        <select name="startYear" id="startYear"></select>
+        <select name="startMonth" id="startMonth"></select>
+        ~
+        <select name="endYear" id="endYear"></select>
+        <select name="endMonth" id="endMonth"></select>
+      </div>
+    </div>
+    <p id="comment_text">回答を入力</p>
+    <textarea id="comment" name="comment" rows="6" required placeholder="仕事内容、人間関係、周辺環境、お給料、寮、食事、休日の過ごし方、制服、持ち物についてなど、なんでも良いので体験談を教えて！"></textarea>
+    <label id="img_label" for="target">
+      <h6 id="image_text">画像</h6>
+      <i id="icon" class="fa fa-camera fa-lg" aria-hidden="true"></i>
+      <input type="file" id="target" multiple>
+      <p>(最大3枚まで)</p>
+    </label>
+    <ul id="select_photo"></ul>
+    <div class="add_btn"><a id="add">投稿</a></div>
+  </div>
+  <div id="footer"> <!-- footer.html読み込み --> </div>
+ </div>
+ <script src="js/header.js"></script>
+ <script src="js/work_add.js"></script>
+ </body>
+</html>

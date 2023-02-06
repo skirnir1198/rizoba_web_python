@@ -1,0 +1,80 @@
+  #main {
+    overflow-x: scroll;
+  }
+
+  /*スクロールバー非表示（Chrome・Safari）*/
+  #main::-webkit-scrollbar{
+    display:none;
+  }
+  
+  /* お問い合わせ入力項目枠 */
+  #inquiry {
+    padding: 40px 0 20px 0;
+    border: solid 1px #000;
+    border-radius: 10px;
+    box-shadow: 3px 3px 15px 0 rgb(0 0 0 / 20%);
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto 0;
+    text-align: center;
+}
+  
+  /* お問い合わせ種別 */
+  #type {
+    width: 200px;
+    margin: 20px 0 40px 0;
+  }
+
+  /* お問い合わせ内容テキストエリア */
+  #content {
+    margin-top: 20px;
+    width: 80%;
+    padding: 12px;
+  }
+  
+  /* 送信ボタン */
+  #send_btn {
+    color: white;
+    background-color: #6cb226;
+    margin: 40px auto 0;
+    padding: 4px 40px;
+    width: 200px;
+    border-radius: 10px;
+  }
+  
+  /* 送信ボタンホバーアクション */
+  #send_btn:hover {
+    cursor: pointer;
+    background-color: #7fc53a;
+  }
+
+  /* 送信完了 */
+  #send_finish {
+    margin: 20vh 0 20px 0;
+  }
+  
+  /* インプットエラー */
+  #error {
+    text-align: center;
+  }
+
+  @media screen and (min-width: 481px) {
+    /* 481px以上に適用されるCSS（タブレット用） */
+    /* お問い合わせ入力項目枠 */
+    #inquiry {
+      width: 60%;
+      max-width: 800px;
+      margin: 40px auto 0;
+    }
+  }
+  @media screen and (min-width: 960px) {
+    /* 960px以上に適用されるCSS（PC用） */
+    /* お問い合わせ入力項目枠 */
+    #inquiry {
+      width: 60%;
+      max-width: 800px;
+      margin: 40px auto 0;
+    }
+  }
+  
+  

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+  <meta charset="utf-8">
+  <title>メールアドレスで登録ページ</title>
+  <meta name="description" content="ディスクリプションを入力">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/mail_sign_up.css">
+  <link href="https://use.fontawesome.com/releases/v6.1.2/css/all.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <link href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" rel="stylesheet" type="text/css">
+  <script src="js/firebase_config.js"></script>
+ </head>
+ <body>
+ <div id="main">
+  <div id="input_box">
+    <div id="top"><h3 class="title_font">Mail SignUp</h3></div>
+    <div id="input">
+      <p id="error"></p>
+      <div id="input_form">
+      <p class="label">メールアドレス</p>
+      <input type="email" id="email"
+         pattern=".+@globex\.com" required>
+      </div>
+      <div id="input_form">
+        <p class="label">パスワード</p>
+        <input type="password" id="pass" name="password" minlength="8" required>
+      </div>
+      <div id="input_form">
+        <p class="label">ユーザー名</p>
+        <input type="text" id="userName" name="username" required>
+      </div>
+      <div id="sign_up">登録</div>
+    </div>
+  </div>
+ </div>
+ <script src="js/mail.sign_up.js"></script>
+ </body>
+</html>

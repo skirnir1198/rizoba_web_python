@@ -1,0 +1,395 @@
+	/* 481px以下に適用されるCSS（スマホ用） */
+
+#main {
+  /* padding: 20px; */
+  text-align: center;
+  z-index: 3;
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+} 
+
+.menu {
+  position: fixed;
+  width: 100%;
+  height: 40px;
+  top: 60px;
+  left: 0;
+  z-index: 90;
+  background-color: #fff;
+}
+
+
+/* top --------------------------------------- */
+
+.userName {
+  display: none;
+}
+
+.post_btn {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 4px;
+  border-radius: 4px;
+  background-color: #7fc53a;
+  border: 1px solid #6cb226;
+  font-size: 4px;
+}
+
+.post_btn:hover {
+  cursor: pointer;
+}
+
+#post_icon {
+  padding-right: 4px;
+}
+
+/* menu ------------------------------------------ */
+
+.menu {
+  width: 100%;
+  display: flex;
+  transition: .3s;
+  color: #000;
+  list-style-type: none;
+  border-bottom: solid 0.5px #DBDEDF;
+}
+
+.menu .menu-list {
+  padding: 8px 20px 4px 20px;
+}
+
+.menu_items {
+  width: 100%;
+  display: flex;
+  transition: .3s;
+  color: #000;
+  list-style-type: none;
+}
+
+.select_marker {
+  border-bottom:3px solid #D6E9C3;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+.select_marker:hover{
+  cursor: default;
+}
+
+/* bottom --------------------------------------- */
+
+#bottom {
+  padding: 60px 0 100px;
+  overflow-x: scroll;
+}
+
+/*スクロールバー非表示（Chrome・Safari）*/
+#bottom::-webkit-scrollbar{
+  display:none;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+#postList {
+  margin: auto;
+  width: 95%;
+  display: flex;
+  display: -ms-flexbox; /* IE10 */
+  flex-wrap: wrap;
+  -ms-flex-wrap: wrap; /* IE10 */
+}
+#postList > .post{
+  width: 100%;
+  padding: 10px;
+}
+
+/* post_content */
+
+.post {
+  height: 270px;
+}
+
+/* 投稿内容枠 */
+.post .content_row {
+  display: flex;
+  margin-top : 8%;
+  height: 150px;
+}
+
+.content {
+  padding: 4%;
+  margin: 1%;
+  height: 250px;
+  border: solid .5px grey;
+  border-radius: 30px;
+  box-shadow: 3px 3px 15px 0 rgb(0 0 0 / 20%);
+}
+
+/* 投稿画像親枠 */
+#content_img {
+  width: 40%;
+  padding-right: 8px;
+}
+
+/* 投稿画像 */
+#content_img img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+/* 投稿テキスト */
+#content_text {
+  width: 60%;
+}
+
+.content h3 {
+  margin-bottom: 8px;
+}
+
+.content h4 {
+  margin-bottom: 12px;
+
+}
+
+.content .memo {
+  margin-left: 4%;
+  text-align: left;
+}
+
+#post {
+  margin: auto 0;
+}
+
+.logout {
+  padding-right: 10px;
+}
+
+/* company */
+
+#rating {
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.score {
+  margin: auto 0px ; 
+  padding-left: 4px;
+}
+
+#comment {
+  text-align: left;
+  overflow-wrap:  break-word;
+  Word-break: break-all;
+}
+
+/* search */
+
+#period {
+  width: 100%;
+}
+
+.select_btn {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px 0 50px 0;
+}
+
+.searchItem {
+  border: solid 1px #000;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 4px;
+  width: 200px;
+}
+
+.searchItem:hover {
+cursor: pointer;
+}
+
+form {
+  margin: auto;
+}
+
+#submit {
+  border: solid 1px #000;
+  border-radius: 20px;
+  padding: 10px 100px;
+}
+
+#submit:hover {
+  cursor: pointer;
+}
+
+.select {
+  background-color: #7fc53a;
+}
+
+@media screen and (min-width: 481px) {
+	/* 481px以上に適用されるCSS（タブレット用） */
+  #postList > .post{
+    width: 50%;
+  }
+}
+@media screen and (min-width: 960px) {
+	/* 960px以上に適用されるCSS（PC用） */
+
+  /* top --------------------------------------- */
+  
+  /* head -------------------------------------- */
+  
+  .head {
+    display: flex;
+  }
+  #main #top{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #top .icon{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .icon img {
+    width: 100px;
+  }
+  
+  /* .profile {
+    width: 200px;
+    margin: auto 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; 
+  } */
+  
+  .userName {
+    display: block;
+    vertical-align: middle;
+    padding-left: 10px;
+  }
+  
+  .post_btn {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+  
+  
+  /* menu ------------------------------------------ */
+  
+  .menu {
+    width: 100%;
+    display: flex;
+    transition: .3s;
+    color: #000;
+    list-style-type: none;
+  }
+  
+  .menu .menu-list {
+    padding: 8px 40px 4px 40p;
+  }
+  
+  .select_marker {
+    border-bottom:3px solid #D6E9C3;
+  }
+  
+  /* bottom --------------------------------------- */
+  @media screen and (max-width: 960px) {
+    #postList > .post{
+      width: 50%;
+    }
+  }
+  
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+  #postList{
+    width: 100%;
+    display: flex;
+    display: -ms-flexbox; /* IE10 */
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap; /* IE10 */
+  }
+  #postList > .post{
+    width: 33.33333%;
+    padding: 10px;
+  }
+  
+  /* post_content */
+  
+  .post {
+    height: 270px;
+    cursor: pointer;
+  }
+  
+  .post img {
+    /* max-width: 200px;
+    max-height: 150px; */
+  }
+  
+  .post .content_row {
+    display: flex;
+    height: 150px;
+  }
+  
+  .content {
+    padding: 4%;
+    margin: 1%;
+    height: 250px;
+    border: solid;
+    border-radius: 30px;
+    border: solid 0.5px grey;
+    box-shadow: 3px 3px 15px 0 rgb(0 0 0 / 20%)
+  }
+  
+  .content h3 {
+    margin-bottom: 8px;
+  }
+  
+  .content h4 {
+    margin-bottom: 12px;
+  
+  }
+  
+  .content .memo {
+    margin-left: 4%;
+    text-align: left;
+  }
+  
+  #post {
+    margin: auto 0;
+  }
+  
+  .logout {
+    padding-right: 10px;
+  }
+  
+  /* company */
+  
+  #rating {
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .score {
+    margin: auto 0px ; 
+    padding-left: 4px;
+  }
+
+  /* search */
+  #postList > #period {
+    width: 90%;
+  }
+}

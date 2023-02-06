@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+ <meta charset="utf-8">
+ <title>マイページ</title>
+ <meta name="description" content="ディスクリプションを入力">
+ <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+ <link rel="stylesheet" href="css/main.css">
+ <link rel="stylesheet" href="css/myPage_edit.css">
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+ <!-- [if lt IE 9] -->
+ <!-- <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+ <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script> -->
+ <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+ <script src="raty-3.1.0/lib/jquery.raty.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-storage.js"></script>
+ <script src="js/firebase_config.js"></script>
+ <script src="js/main.js"></script>
+
+ <!-- [endif] -->
+ 
+ </head>
+ <body>
+  <div id="loading">
+    <div class="kvArea" id="loading_box">
+      <div class="img_box"><img src="image/Spinner-3.gif" alt="" class="fadeUp"></div>
+    </div>
+  </div>
+
+ <div id="main">
+  <div id="userInfo">
+    <div id="select_photo">
+      <img id="profile">
+      <label id="img_label" for="target">
+      <i id="icon" class="fa-solid fa-camera fa-lg"></i>
+      <input type="file" id="target" multiple>
+      </label>
+    </div>
+    <label for="name">名前</label>
+    <input type="text" id="userName" name="name" required minlength="4" maxlength="8" size="10">
+    <p id="error"></p>
+    <label for="birth" id="birth">生年月日</label>
+    <div id="select">
+      <select name="birth" id="year"></select>
+      <select name="birth" id="month"></select>
+      <select name="birth" id="day"></select>
+    </div>
+    <label for="sex" id="sex">性別</label>
+    <div id="radio">
+      <label for="gender_noanswer"><input type="radio" id="0" class="radio" name="gender" value="0">未選択</label>
+      <label for="gender_male"><input type="radio" id="1"class="radio"  name="gender" value="1">男性</label>
+      <label for="gender_female"><input type="radio" id="2" class="radio" name="gender" value="2">女性</label>
+    </div>
+    <label for="comment">自己紹介</label>
+    <textarea id="comment" name="comment" rows="10" required></textarea>
+    <span id="update">更新</span>
+ </div>
+ <script src="js/myPage_edit.js"></script>
+ </body>
+</html>

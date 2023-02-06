@@ -1,0 +1,784 @@
+
+#main {
+  flex-direction: row;
+  text-align: center;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 100vh;
+  padding: 10px;
+}
+
+#loading_box p {
+  font-size: 30px;
+}
+
+/* left */
+#left {
+  display: none;
+}
+
+#left img {
+  width: auto;
+  height: 70px;
+}
+
+#left img:hover {
+  cursor: pointer;
+}
+
+.menu_btn {
+  padding-top: 40px;
+}
+
+.menu_btn:hover {
+  cursor: pointer;
+}
+
+.select {
+  color: #000;
+  font-weight: bold;
+}
+
+#slide_menu {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -1200px;
+  background: rgb(255 255 255 / 73%);
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+#slide_content {
+  position: relative;
+  border-right: solid 1px #000;
+  border-bottom: solid 1px #000;
+  padding: 20px 20px 20px 20px;
+  background-color: #fff;
+  text-align: left;
+  width: fit-content;
+  height: fit-content;
+  display: block;
+  z-index: 10;
+}
+
+#close {
+  position: absolute;
+  top: 30px;
+  right: 0;
+}
+
+.profile {
+  margin-top: 60px;
+}
+
+
+/* メニューアニメーション */
+.slowOpen {
+  background: rgb(255 255 255 / 73%);
+  animation: slideIn .2s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-180px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+  }
+  40%,100% {
+    opacity: 1;
+  }
+}
+
+/* right */
+#right {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  padding-top: 50px;
+}
+
+
+/* プロフィール */
+
+#userInfo {
+  height: 400px;
+  max-width: 100%;
+  margin: auto;
+  padding: 10px;
+  border: .5px solid grey;
+  border-radius: 10px;
+  box-shadow: 3px 3px 15px 0 rgb(0 0 0 / 20%)
+}
+
+#top {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #000;
+  padding: 10px;
+}
+
+#profile {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; 
+}
+
+#userName {
+  padding-left: 30px;
+}
+
+i {
+  margin: 0 0 0 auto;
+  padding-right: 10px;
+  color: orange;
+}
+
+#comment {
+  text-align: left;
+  padding: 10px;
+  overflow-wrap:break-word;
+}
+
+.delete_account {
+  color: #fff;
+  background-color: red;
+  padding: 10px 20px;
+  margin: 50px auto;
+  border-radius: 10px;
+}
+
+.delete_account:hover {
+  cursor: pointer;
+} 
+
+.delete_account h5 {
+  display: inline;
+  color:#fff;
+}
+
+#edit:hover {
+  cursor: pointer;
+}
+
+#delete:hover {
+  cursor: pointer;
+}
+
+/* アルバム */
+
+#album_add {
+  color: #fff;
+  background-color: #eb6100;
+  font-size: 24px;
+  margin: 20px;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+}
+
+#album_add:hover {
+  color: #fff;
+  background: #fa8d3f;
+  cursor: pointer;
+}
+
+#album_add {
+   border-radius: 100vh;
+}
+
+#select_photo img{
+  height: 100px;
+}
+#add_photo {
+  width: 150px;
+  background-color: #dbecce;
+  text-align: center;
+  border-radius: 20px;
+  padding: 4px;
+  margin: 20px auto;
+  border: 1px solid #8bc163;
+}
+
+#add_photo:hover {
+  cursor: pointer;
+}
+
+.fa-camera {
+  color: #fff;
+}
+
+#error_title, #error_img {
+  color: red;
+}
+
+ /* アルバム詳細ページ */
+ #albumDetailPage {
+  padding: 40px;
+  line-height: 28px;
+  font-weight: bold;
+  color: #000;
+  background: #FFF;
+  border: solid 1px #000;
+  border-radius: 10px;
+  margin: 40px 0 0 0;
+  position: absolute;
+}
+
+/* タイトル入力インプット */
+#input_title {
+  margin-bottom: 40px;
+}
+
+/* 投稿用メモ */
+#input_memo, #memo {
+  padding: 8px;
+  line-height: 28px;
+  height: 150px;
+  text-align: left;
+  font-weight: bold;
+  color: #000;/*文字色*/
+  background: #FFF;
+  border: solid 1px #000;
+  border-radius: 10px;/*角の丸み*/
+}
+
+#album_add_container {
+  padding: 8px;
+  line-height: 28px;
+  text-align: center;
+  font-weight: bold;
+  display:flex;
+  flex-flow: column;
+  color: #000;
+  background: #FFF;
+  border-radius: 10px;
+  border: 1px solid #000;
+  margin: 20px;
+  padding: 20px;
+}
+
+/* 投稿した画像の一枚目 */
+#firstImg {
+  width: 60px;
+  margin-top: 50px;
+}
+/* 投稿したアルバムリスト */
+#albumList {
+  width: 100%;
+  display: flex;
+  display: -ms-flexbox; /* IE10 */
+  flex-wrap: wrap;
+  -ms-flex-wrap: wrap; /* IE10 */
+}
+
+/* 投稿したアルバムリスト親要素 */
+#albumList li {
+  list-style: none;
+  padding: 4%;
+  margin: 1%;
+  height: 250px;
+  width: 30%;
+  border: solid .5px grey;
+  border-radius: 30px;
+  box-shadow: 3px 3px 15px 0 rgb(0 0 0 / 20%);
+}
+
+#albumList li:hover {
+  opacity: 0.7;
+}
+
+/* 投稿したアルバムリスト子要素 */
+.albumLi {
+  height: 270px;
+}
+
+.albumLi:hover {
+  cursor: pointer;
+}
+
+/* アルバム詳細ページ画像リスト */
+#imageList {
+  width: 100%;
+  display: flex;
+  display: -ms-flexbox; /* IE10 */
+  flex-wrap: wrap;
+  -ms-flex-wrap: wrap; /* IE10 */
+  margin-top: 20px;
+}
+
+/* アルバム詳細ページ画像リストの画像スタイル */
+#imageList img {
+  list-style: none;
+  margin: 1%;
+  width: 15%;
+}
+
+/* 追加予定画像 */
+.add_img {
+  position: relative;
+  width: 50px;
+}
+
+/* アルバム追加画像削除 */
+.rmb {
+  position: absolute;
+  z-index: 100;
+  right: 3px;
+  top: 10px;
+  padding: 0;
+  color: red;
+}
+
+/* 投稿用画像親要素 */
+div figure{
+  display: inline-block;
+  margin: 10px;
+}
+/* 投稿用画像 */
+figure img {
+  width: 50px;
+}
+/* 画像を横並びに */
+a {
+  display: contents;
+}
+
+/* 画像選択ボタンスタイル */
+#imgs {
+  display: none;
+}
+
+#upload {
+  width: 200px;
+  background-color: #FEBD58;
+  text-align: center;
+  border-radius: 20px;
+  padding: 4px;
+  margin: 20px auto;
+}
+
+
+/* 診断テスト --------------------------------------------- */
+
+#content {
+  margin: 0 auto;
+}
+
+#company_test {
+  color: #fff;
+  background-color: #eb6100;
+  border-radius: 100vh;
+  width: 200px;
+  text-align: center;
+  margin: 0 auto;
+  height: 60px;
+  line-height: 60px;
+}
+
+#company_test:hover {
+  color: #fff;
+  background: #f56500;
+  cursor: pointer;
+}
+
+#btn_content {
+  display: flex;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+#ans_btn {
+  background-color: #f4f4f4;
+  border: 1px solid #434343;
+  border-radius: 100vh;
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  margin-right: 20px;
+}
+
+#ans_btn:hover {
+  cursor: pointer;
+}
+
+#q_title {
+  margin: 20px 0;
+}
+
+#q_ans {
+  margin: 20px 0;
+  font-size: 2em;
+}
+
+#return_test {
+  color: #6cb6ac;
+}
+
+#register {
+  margin-bottom: 10px;
+}
+
+/* menu ------------------------------------------ */
+
+.menu {
+  width: 100%;
+  display: flex;
+  transition: .3s;
+  color: #000;
+  list-style-type: none;
+  padding:20px;
+}
+
+.popup_menu {
+  float: right;
+  position: absolute;
+  top:10px;
+  right:10px;
+  text-align: right;
+}
+
+.popup_menu:hover {
+  cursor: pointer;
+}
+
+.popup_menu li {
+  list-style: none;
+  text-align: left;
+  padding: 10px;
+}
+.popup_menu li a {
+  display: block;
+  width: 220px;
+  padding: 10px;
+}
+
+.popup_menu ul {
+  display: none;
+  width: 220px;
+}
+
+.popup_menu h6 {
+  display: inline;
+}
+
+.select_menu {
+  border: solid 1px #000;
+  border-radius: 4px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #fff;
+}
+
+.menu .menu-list {
+  padding: 0px 12px;
+}
+
+.menu-list:hover {
+  cursor: pointer;
+}
+
+.select_marker:hover {
+  cursor: default;
+}
+
+.select_marker {
+  border-bottom:3px solid #D6E9C3;
+}
+
+/* 自分の投稿 */
+
+#postList:hover {
+  cursor: pointer;
+}
+
+/* お気に入り投稿 */
+
+.post {
+  border: solid 1px #000;
+  border-radius: 10px;
+  box-shadow: 3px 3px 15px 0 rgb(0 0 0 / 20%);
+  padding: 20px;
+}
+
+.post img {
+  width: 50%;
+  height: 50%;
+  max-width: 200px;
+  max-height: 150px;
+}
+
+.post .content_row {
+  display: flex;
+  margin-top : 2%;
+}
+
+/* 自分の投稿 */
+
+#my_post {
+  margin-bottom: 20px;
+}
+
+#rating {
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+#rating img {
+  width: 24px;
+  height: 24px;
+}
+
+#comment {
+  text-overflow: ellipsis;
+}
+
+/* ブロックユーザー */
+
+.block_user_info {
+  width: 100%;
+  max-width: 400px;
+  height: 40px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.userName {
+  vertical-align: middle;
+  padding-left: 10px;
+  height: 40px;
+  line-height: 40px;
+  display: inline-block;
+}
+
+.block_user_info img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%; 
+  vertical-align: middle;
+  display: inline-block;
+}
+
+#block_user_title {
+  margin-bottom: 20px;
+}
+
+.lift_btn {
+  color: white;
+  background-color: grey;
+  width: 50px;
+  border-radius: 10px;
+  float: right;
+}
+
+/* お問い合わせ */
+
+#inquiry {
+  padding: 40px 0 20px 0;
+  border: solid 1px #000;
+  border-radius: 10px;
+  box-shadow: 3px 3px 15px 0 rgb(0 0 0 / 20%);
+}
+
+
+#type {
+  width: 200px;
+  margin: 20px 0 40px 0;
+}
+
+#content {
+  margin-top: 20px;
+  width: 80%;
+}
+
+#send_btn {
+  color: white;
+  background-color: #6cb226;
+  margin: 40px auto 0;
+  padding: 4px 40px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+#send_btn:hover {
+  cursor: pointer;
+  background-color: #7fc53a;
+}
+
+.fa-trash-can {
+  display: inline;
+}
+
+  
+/* ハンバーガーメニュー */
+  
+.btn {
+  /* ボタンの配置位置  */
+  position: fixed;
+  top: 8px;
+  left: 16px;
+  /* ボタンの大きさ  */
+  width: 24px;
+  height: 12px;
+  /* 最前面に */
+  z-index: 3;
+  background: transparent;
+  border: none;
+  background-color:transparent;
+}
+
+.btn-line {
+  display: block;
+  position: relative;  /* バーガー線の位置基準として設定 */
+  width: 100%;  /* 線の長さと高さ */
+  height: 2px;
+  background-color: #d6d5d5;  /* バーガー線の色 */
+  transition: .2s;
+}
+
+.btn-line:nth-child(1) {
+  top: 0;
+}
+
+.btn-line:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.btn-line:nth-child(3) {
+  top: 100%;
+  transform: translateY(-100%);
+}
+
+/* 戻るボタン */
+#return_detail {
+  text-align: left;
+  width: fit-content;
+}
+
+#return_detail:hover {
+  cursor: pointer;
+}
+
+#title {
+  margin: 0px 0 20px 0;
+}
+
+label {
+  text-align: left;
+}
+
+@media screen and (min-width: 481px) {
+  /* 481px以上に適用されるCSS（タブレット用） */
+
+  #right {
+    width: 100%;
+    overflow: auto;
+  }
+
+  #userInfo {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    
+  }
+
+  #my_post {
+    width: 60%;
+    margin: 0 auto 20px;
+  }
+
+  #inquiry {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  #slide_content {
+    height: 50%;
+  }
+
+  /* アルバムページ */
+  /* 投稿した画像の一枚目 */
+  #firstImg {
+    width: 60px;
+    margin: 20px 0;
+  }
+
+  /* 追加予定画像 */
+  .add_img {
+    width:100px;
+  }
+
+  /* 投稿用画像 */
+  figure img {
+    width: 100px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  /* 960px以上に適用されるCSS（PC用） */
+
+  #main {
+    padding: 0 30px;
+  }
+
+  .btn {
+    display: none;
+  }
+
+  /* left */
+  #left {
+    border-right: solid 1px #000;
+    display: block;
+    text-align: left;
+    padding-right: 20px;
+  }
+
+  #slide_menu {
+    display: none;
+    background: rgb(255 255 255 / 0%);
+  }
+
+  #icon_img {
+    margin: auto;
+    display: block;
+  }
+
+  .profile {
+    margin-top: 0;
+  }
+
+  /* right */
+  #right {
+    width: 600px;
+    padding: 40px 20px;
+    display: flex;
+    flex-flow: column;
+    overflow: auto;
+  }
+
+  #profile {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* 診断テスト */
+  #q_ans {
+    font-size: 3em;
+  }
+
+  #return_test {
+    margin-top: 40px;
+  }
+}

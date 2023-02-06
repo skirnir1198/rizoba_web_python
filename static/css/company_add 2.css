@@ -1,0 +1,65 @@
+#main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 40px auto;
+  padding: 40px 60px;
+  height: auto;
+  width: fit-content;
+  text-align: center;
+}
+
+
+#add_btn {
+  width: 100px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  padding: 4px 16px;
+  margin: auto;
+  border-radius: 4px;
+  background-color: #7fc53a;
+  border: 1px solid #6cb226;
+  margin-top: 20px;
+}
+
+#add_btn:hover {
+  cursor: pointer;
+}
+
+#rating h6, #content {
+  margin-top: 20px;
+}
+
+#comment {
+  padding: 4px;
+}
+
+@media screen and (min-width: 481px) {
+	/* 481px以上に適用されるCSS（タブレット用） */
+  #main {
+    width: 600px;
+    border: solid 1px grey;
+    border-radius: 10px;
+    padding: 80px;
+  }
+
+  select {
+    height: 40px;
+  }
+
+  #rating img {
+    width: 24px;
+  }
+
+  h6 {
+    padding: 20px 0 10px 0;
+  }
+}
+@media screen and (min-width: 960px) {
+	/* 960px以上に適用されるCSS（PC用） */
+  #main {
+    border: solid 1px grey;
+    border-radius: 10px;
+  }
+}

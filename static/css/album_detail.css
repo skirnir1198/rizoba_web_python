@@ -1,0 +1,185 @@
+/* メインコンテンツ */
+#main {
+  width: 100%;
+  margin: auto;
+  padding-top: 40px;
+}
+
+/* 一覧ページへ戻るボタン */
+#return_detail {
+    text-align: left;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 600px;
+}
+/* ホバーアクション */
+#return_detail:hover {
+    cursor: pointer;
+}
+/* menu ------------------------------------------ */
+
+.menu {
+    width: 100%;
+    display: flex;
+    transition: .3s;
+    color: #000;
+    list-style-type: none;
+    padding:20px;
+  }
+  
+  .popup_menu {
+    float: right;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    text-align: right;
+  }
+  
+  .popup_menu:hover {
+    cursor: pointer;
+  }
+  
+  .popup_menu li {
+    list-style: none;
+    text-align: left;
+    padding: 10px;
+  }
+  .popup_menu li a {
+    display: block;
+    width: 220px;
+    padding: 10px;
+  }
+  
+  .popup_menu ul {
+    display: none;
+    width: 220px;
+  }
+  
+  .popup_menu h6 {
+    display: inline;
+  }
+  
+  .select_menu {
+    border: solid 1px #000;
+    border-radius: 4px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: #fff;
+  }
+  
+
+  .fa-trash {
+    color: red;
+    margin-right: 8px;
+  }
+  
+   /* アルバム詳細ページ */
+  #albumDetailPage {
+    padding: 40px;
+    line-height: 28px;
+    font-weight: bold;
+    color: #000;
+    background: #FFF;
+    border: solid 1px #000;
+    border-radius: 10px;
+    margin: 8px auto 0px;
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+  }
+
+  /* タイトル */
+  #title {
+    margin: 8px 0;
+    text-align: center;
+  }
+
+  #memo {
+    padding: 8px;
+    line-height: 28px;
+    height: 150px;
+    text-align: left;
+    font-weight: bold;
+    color: #000;/*文字色*/
+    background: #FFF;
+    border: solid 1px #000;
+    border-radius: 10px;/*角の丸み*/
+  }
+  
+  /* アルバム詳細ページ画像リスト */
+  #imageList {
+    width: 100%;
+    display: flex;
+    display: -ms-flexbox; /* IE10 */
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap; /* IE10 */
+    margin-top: 20px;
+  }
+  
+  /* アルバム詳細ページ画像リストの画像スタイル */
+  #imageList img {
+    list-style: none;
+    margin: 1%;
+    width: 15%;
+  }
+
+  #imageList img:hover {
+    opacity: .5;
+  }
+  
+  /* 画像を横並びに */
+  a {
+    display: contents;
+  }
+
+  #lightbox {
+    top: 25vh;
+  }
+
+  @media screen and (min-width: 481px) {
+    /* 481px以上に適用されるCSS（タブレット用） */
+
+    #main {
+      width: 60%;
+    }
+
+    /* アルバム詳細ページ */
+    #albumDetailPage {
+      width: 90%;
+    }
+
+    /* 一覧ページへ戻るボタン */
+    #return_detail {
+      width: 90%;
+    }
+
+    /* アルバム詳細ページ画像リストの画像スタイル */
+    #imageList img {
+      width: 10%;
+    }
+  }
+  @media screen and (min-width: 960px) {
+    /* 960px以上に適用されるCSS（PC用） */
+
+    #main {
+      width: 60%;
+    }
+
+    /* アルバム詳細ページ */
+    #albumDetailPage {
+      width: 90%;
+    }
+
+    /* 一覧ページへ戻るボタン */
+    #return_detail {
+      width: 90%;
+    }
+
+    /* アルバム詳細ページ画像リストの画像スタイル */
+    #imageList img {
+      width: 10%;
+    }
+  }
+    

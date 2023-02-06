@@ -1,0 +1,455 @@
+	/* 481px以下に適用されるCSS（スマホ用） */
+
+#main {
+  padding: 20px;
+  text-align: center;
+  z-index: 3;
+} 
+
+/* top --------------------------------------- */
+
+/* head -------------------------------------- */
+
+.head {
+  display: flex;
+  justify-content: space-between;
+}
+#main #top{
+  display: flex;
+  flex-direction: column;
+}
+
+.icon img {
+  width: 60px;
+}
+
+.profile {
+  margin: auto 0;
+  display: flex;
+  align-items: center;
+}
+
+.profile:hover {
+  cursor: pointer;
+}
+
+.profile img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; 
+}
+
+.userName {
+  display: none;
+}
+
+.post_btn {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: #7fc53a;
+  border: 1px solid #6cb226;
+}
+
+.post_btn:hover {
+  cursor: pointer;
+}
+
+#post_icon {
+  padding-right: 4px;
+}
+
+/* menu ------------------------------------------ */
+
+.menu {
+  width: 100%;
+  display: flex;
+  transition: .3s;
+  color: #000;
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.menu .menu-list {
+  padding: 0px 12px;
+}
+
+.select_marker {
+  border-bottom:3px solid #D6E9C3;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+.select_marker:hover{
+  cursor: default;
+}
+
+/* ハンバーガーメニュー */
+
+.btn {
+  /* ボタンの配置位置  */
+  position: fixed;
+  top: 32px;
+  right: 16px;
+  /* ボタンの大きさ  */
+  width: 48px;
+  height: 48px;
+  /* 最前面に */
+  z-index: 10;
+  background-color: red; /* わかりやすいように */
+}
+
+.btn-line {
+  display: block;
+  position: relative;  /* バーガー線の位置基準として設定 */
+  width: 100%;  /* 線の長さと高さ */
+  height: 4px;
+  background-color: #d6d5d5;  /* バーガー線の色 */
+  transition: .2s;
+}
+
+.btn-line::before,
+.btn-line::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #d6d5d5;
+  transition: .5s;
+}
+.btn-line::before {
+  /* 上の線の位置 */
+  transform: translateY(-16px);
+}
+.btn-line::after {
+  /* 下の線の位置 */
+  transform: translateY(16px);
+}
+
+/* bottom --------------------------------------- */
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+#postList{
+  width: 100%;
+  display: flex;
+  display: -ms-flexbox; /* IE10 */
+  flex-wrap: wrap;
+  -ms-flex-wrap: wrap; /* IE10 */
+}
+#postList > .post{
+  width: 100%;
+  padding: 10px;
+}
+
+/* post_content */
+
+.post {
+  height: 270px;
+}
+
+.post img {
+  max-width: 200px;
+  max-height: 150px;
+}
+
+.post .content_row {
+  display: flex;
+  margin-top : 8%;
+  height: 150px;
+}
+
+.content {
+  padding: 4%;
+  margin: 1%;
+  height: 250px;
+  border: solid .5px grey;
+  border-radius: 30px;
+  box-shadow: 3px 3px 15px 0 rgb(0 0 0 / 20%);
+}
+
+.content h3 {
+  margin-bottom: 8px;
+}
+
+.content h4 {
+  margin-bottom: 12px;
+
+}
+
+.content .memo {
+  margin-left: 4%;
+  text-align: left;
+}
+
+#sign_in_btn {
+  margin: auto 0;
+}
+
+.sign_up {
+  margin: 0 10px 0 10px;
+}
+
+.logout {
+  padding-right: 10px;
+}
+
+.post_img {
+  width: 40%;
+  height: 50%;
+}
+
+/* company */
+
+#rating {
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.score {
+  margin: auto 0px ; 
+  padding-left: 4px;
+}
+
+#comment {
+  text-align: left;
+}
+
+/* search */
+
+#period {
+  width: 100%;
+}
+
+.select_btn {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px 0 50px 0;
+}
+
+.searchItem {
+  border: solid 1px #000;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 4px;
+  width: 200px;
+}
+
+.searchItem:hover {
+cursor: pointer;
+}
+
+form {
+  margin: auto;
+}
+
+#submit {
+  border: solid 1px #000;
+  border-radius: 20px;
+  padding: 10px 100px;
+}
+
+#submit:hover {
+  cursor: pointer;
+}
+
+.select {
+  background-color: #7fc53a;
+}
+
+@media screen and (min-width: 481px) {
+	/* 481px以上に適用されるCSS（タブレット用） */
+  #postList > .post{
+    width: 50%;
+  }
+}
+@media screen and (min-width: 960px) {
+	/* 960px以上に適用されるCSS（PC用） */
+
+  #main {
+    padding: 20px;
+  }
+  /* top --------------------------------------- */
+  
+  /* head -------------------------------------- */
+  
+  .head {
+    display: flex;
+  }
+  #main #top{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #top .icon{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .icon img {
+    width: 100px;
+  }
+  
+  .profile {
+    width: 200px;
+    margin: auto 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; 
+  }
+  
+  .userName {
+    display: block;
+    vertical-align: middle;
+    padding-left: 10px;
+  }
+  
+  .post_btn {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    background-color: #7fc53a;
+    border: 1px solid #6cb226;
+  }
+  
+  /* menu ------------------------------------------ */
+  
+  .menu {
+    width: 100%;
+    display: flex;
+    transition: .3s;
+    color: #000;
+    list-style-type: none;
+    padding-left: 20px;
+  }
+  
+  .menu .menu-list {
+    padding: 0px 12px;
+  }
+  
+  .select_marker {
+    border-bottom:3px solid #D6E9C3;
+  }
+  
+  /* bottom --------------------------------------- */
+  @media screen and (max-width: 960px) {
+    #postList > .post{
+      width: 50%;
+    }
+  }
+  
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+  #postList{
+    width: 100%;
+    display: flex;
+    display: -ms-flexbox; /* IE10 */
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap; /* IE10 */
+  }
+  #postList > .post{
+    width: 33.33333%;
+    padding: 10px;
+  }
+  
+  /* post_content */
+  
+  .post {
+    height: 270px;
+    cursor: pointer;
+  }
+  
+  .post img {
+    max-width: 200px;
+    max-height: 150px;
+  }
+  
+  .post .content_row {
+    display: flex;
+    height: 150px;
+  }
+  
+  .content {
+    padding: 4%;
+    margin: 1%;
+    height: 250px;
+    border: solid;
+    border-radius: 30px;
+    border: solid 0.5px grey;
+    box-shadow: 3px 3px 15px 0 rgb(0 0 0 / 20%)
+  }
+  
+  .content h3 {
+    margin-bottom: 8px;
+  }
+  
+  .content h4 {
+    margin-bottom: 12px;
+  
+  }
+  
+  .content .memo {
+    margin-left: 4%;
+    text-align: left;
+  }
+  
+  #sign_in_btn {
+    margin: auto 0;
+  }
+
+  .login, .sign_up {
+    color: grey;
+    font-family: 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
+  }
+
+  .login:hover, .sign_up:hover {
+    color: #6cb226;
+  } 
+  
+  .sign_up {
+    margin: 0 10px 0 10px;
+  }
+  
+  .logout {
+    padding-right: 10px;
+  }
+  
+  .post_img {
+    width: 40%;
+    height: 50%;
+  }
+  
+  /* company */
+  
+  #rating {
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .score {
+    margin: auto 0px ; 
+    padding-left: 4px;
+  }
+  
+  #comment {
+    text-align: left;
+  }
+
+  /* search */
+  postList > #period {
+    width: 90%;
+  }
+}

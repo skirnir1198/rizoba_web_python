@@ -1,0 +1,192 @@
+#bottom {
+  /* 子要素のタイトルを aboslute 配置するため必要 */
+  padding: 20px;
+  margin-bottom: 100px;
+}
+
+/* 投稿ユーザー情報 */
+#userInfo {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 10px;
+}
+
+/* 投稿データ枠 */
+#postData {
+  background-color: #e9f9d9;
+  text-align: center;
+  margin:auto;
+  padding: 20px;
+  border-radius:10px;
+  position: relative;
+}
+
+#image_containers {
+  margin-top: 40px;
+}
+
+#image_container {
+  width: fit-content;
+  height: fit-content;
+  padding: 2px;
+  display: inline-block;
+}
+
+/* 投稿写真 */
+#postImg {
+  width: auto;
+  height: 60px;
+  padding: 2px;
+}
+
+#postImg:hover {
+  cursor: pointer;
+  opacity: .6;
+}
+
+/* テキスト上部スペース */
+#postData h6, #sex_age{
+  margin: 30px 0 4px 0;
+}
+
+/* 投稿コメント枠 */
+#comment {
+  background-color: rgb(236, 250, 254);
+  padding: 10px;
+  margin-top: 40px;
+  border-radius:10px;
+  text-align: left;
+}
+
+/* グレーテキスト */
+.grey_font {
+  color: #515151;
+}
+
+/* 3点リーダー */
+.menu {
+  float: right;
+  position: absolute;
+  top:10px;
+  right:10px;
+  text-align: right;
+}
+
+/* 3点リーダーul */
+.menu ul {
+  display: none;
+  width: 200px;
+}
+
+/* 3点リーダーli */
+.menu li {
+  list-style: none;
+  text-align: left;
+  padding: 4px 8px;
+}
+
+/* 3点リーダー中身ul */
+.select_menu {
+  border: solid 1px #dfdfdf;
+  border-radius: 4px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #fff;
+}
+
+/* 3点リーダー中身ul liアイコン */
+.select_menu i {
+  padding-right: 10px;
+}
+
+/* 3点リーダー中身ul テキスト */
+.select_menu p {
+  display: inline;
+  color: #949494;
+}
+
+/* 3点リーダー中身li ホバーアクション */
+.select_menu li:hover {
+  cursor: pointer;
+  background-color: #f0f0f0;
+}
+
+/* 3点リーダー中身li ホバーアクション */
+.select_menu li:hover p{
+  color: black;
+}
+
+/* 編集アイコン、報告アイコン */
+.fa-pen, .fa-flag {
+  color: coral;
+  display: inline;
+}
+
+/* 削除アイコン、ブロックアイコン */
+.fa-trash, .fa-ban {
+  color: red;
+}
+
+/* 3点リーダー中身li アイコン */
+.pop_up {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  padding-top: 12px;
+}
+
+/* 3点リーダー中身li アイコンホバーアクション */
+.pop_up:hover {
+  cursor: pointer;
+  color: #ff9d00;
+  background-color: rgba(249, 248, 244, 0.523);
+  border-radius: 50%;
+}
+
+/* ブロックダイアログ */
+.noTitleDialog .ui-dialog-titlebar {
+  display:none;
+}
+
+@media screen and (min-width: 481px) {
+	/* 481px以上に適用されるCSS（タブレット用） */
+  
+  /* 投稿写真 */
+  #postImg {
+    width: auto;
+    height: 100px;
+    padding: 4px;
+  }
+
+  /* 投稿ユーザー情報 */
+  #userInfo {
+    width: 500px;
+  }
+}
+@media screen and (min-width: 960px) {
+	/* 960px以上に適用されるCSS（PC用） */
+  #main {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  /* 投稿枠 */
+  #postData {
+    width: 500px;
+  }
+
+  /* 投稿写真 */
+  #postImg {
+    width: auto;
+    height: 100px;
+    padding: 4px;
+  }
+
+  /* 投稿ユーザー情報 */
+  #userInfo {
+    width: 500px;
+  }
+}
