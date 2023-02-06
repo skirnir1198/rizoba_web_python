@@ -11,13 +11,38 @@
       const uid = user.uid;
       $(".hamburger-list").append(
         `<ul>
-        <li id="close"><i class="fa-solid fa-xmark fa-2xl"></i></li>
-        <li id="menu_li"><h5 class="top menu_btn"><i class="fa-solid fa-house"></i>TOP</h5></li>
-        <li id="menu_li"><h5 class="profile menu_btn"><i class="fa-regular fa-user"></i>プロフィール</h5></li>
-        <li id="menu_li"><h5 class="test menu_btn"><i class="fa-solid fa-file-lines"></i>診断テスト</h5></li>
-        <li id="menu_li"><h5 class="album menu_btn"><i class="fa-solid fa-pen-fancy"></i>アルバム</h5></li>
-        <li id="menu_li"><h5 class="inquiry menu_btn"><i class="fa-regular fa-circle-question"></i>お問い合わせ</h5></li>
-        <li id="menu_li"><h5 class="logout menu_btn"><i class="fa-solid fa-right-from-bracket"></i>ログアウト</h5></li>
+          <li id="close"><i class="fa-solid fa-xmark fa-2xl"></i></li>
+          <li id="menu_li">
+            <form action="/top" method="POST">
+              <h5 class="login menu_btn"><i class="fa-solid fa-house"></i><input type="submit" value="Top">
+            </form>
+          </li>
+          <li id="menu_li">
+            <form action="/profile" method="POST">
+              <h5 class="profile menu_btn"><i class="fa-solid fa-user"></i><input type="submit" value="プロフィール">
+            </form>
+          </li>
+        
+          <li id="menu_li">
+            <form action="/signUp" method="POST">
+              <h5 class="signUp menu_btn"><i class="fa-solid fa-user-plus"></i><input type="submit" value="新規登録">
+            </form>
+          </li>
+          <li id="menu_li">
+            <form action="/test" method="POST">
+              <h5 class="test menu_btn"><i class="fa-solid fa-file-lines"></i><input type="submit" value="診断テスト">
+            </form>
+          </li>
+          <li id="menu_li">
+            <form action="/inquiry" method="POST">
+              <h5 class="inquiry menu_btn"><i class="fa-solid fa-circle-question"></i><input type="submit" value="お問い合わせ">
+            </form>
+          </li>
+          <li id="menu_li">
+            <form action="/logout" method="POST">
+              <h5 class="logout menu_btn"><i class="fa-solid fa-right-from-bracket"></i><input type="submit" value="ログアウト">
+            </form>
+          </li>
       </ul>`
       );
       // プロフィール
@@ -38,16 +63,32 @@
       // 非ログイン時のメニュー
       $(".hamburger-list").append(
         `<ul>
-        <li id="close"><i class="fa-solid fa-xmark fa-2xl"></i></li>
-        <li id="menu_li"><h5 class="top menu_btn"><i class="fa-solid fa-house"></i>TOP</h5></li>
-        <li id="menu_li">
-          <form action="/login" method="POST">
-            <i class="fa-solid fa-right-to-bracket"></i><input type="submit" value="ログイン">
-          </form>
-        </li>
-        <li id="menu_li"><h5 class="sign_up menu_btn"><i class="fa-solid fa-user-plus"></i>新規登録</h5></li>
-        <li id="menu_li"><h5 class="test menu_btn"><i class="fa-solid fa-file-lines"></i>診断テスト</h5></li>
-        <li id="menu_li"><h5 class="inquiry menu_btn"><i class="fa-regular fa-circle-question"></i>お問い合わせ</h5></li>
+          <li id="close"><i class="fa-solid fa-xmark fa-2xl"></i></li>
+          <li id="menu_li">
+            <form action="/top" method="POST">
+              <h5 class="login menu_btn"><i class="fa-solid fa-house"></i><input type="submit" value="Top">
+            </form>
+          </li>
+          <li id="menu_li">
+            <form action="/login" method="POST">
+              <h5 class="login menu_btn"><i class="fa-solid fa-right-to-bracket"></i><input type="submit" value="ログイン">
+            </form>
+          </li>
+          <li id="menu_li">
+            <form action="/signUp" method="POST">
+              <h5 class="signUp menu_btn"><i class="fa-solid fa-user-plus"></i><input type="submit" value="新規登録">
+            </form>
+          </li>
+          <li id="menu_li">
+            <form action="/test" method="POST">
+              <h5 class="test menu_btn"><i class="fa-solid fa-file-lines"></i><input type="submit" value="診断テスト">
+            </form>
+          </li>
+          <li id="menu_li">
+            <form action="/inquiry" method="POST">
+              <h5 class="inquiry menu_btn"><i class="fa-solid fa-circle-question"></i><input type="submit" value="お問い合わせ">
+            </form>
+          </li>
         </ul>`
       );
       // お問い合わせ

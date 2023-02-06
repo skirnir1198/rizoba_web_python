@@ -1,13 +1,4 @@
 {
-  $(document).ready(
-    async function(){
-    $.ajaxSetup({cache:false});
-    $("#header").load("./header.html");
-    $.ajaxSetup({cache:false});
-    $("#footer").load("./footer.html");
-    }
-  );
-
   // パスワード表示切り替え
   $('.toggle-pass').on('click', function() {
     $(this).toggleClass('fa-eye fa-eye-slash');
@@ -90,7 +81,6 @@
       var idToken = credential.idToken;
 
       // ...
-      console.log(user);
       window.location.href = 'index.html';
     })
     .catch((error) => {

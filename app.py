@@ -34,12 +34,33 @@ def next():
     # return render_template('search_result.html',dive_result=results[0])
 
 
-def login():
-    return render_template('login.html')
+@app.route("/top", methods=["POST"])
+def top():
+    return render_template("top.html")
+
+@app.route("/profile", methods=["POST"])
+def profile():
+    return render_template("profile.html")
+
+@app.route("/logout", methods=["POST"])
+def logout():
+    return render_template("logout.html")
 
 @app.route("/login", methods=["POST"])
 def login():
     return render_template("login.html")
+
+@app.route("/signUp", methods=["POST"])
+def signUp():
+    return render_template("sign_up.html")
+
+@app.route("/test", methods=["POST"])
+def test():
+    return render_template("test.html")
+
+@app.route("/inquiry", methods=["POST"])
+def inquiry():
+    return render_template("inquiry.html")
 
 if __name__ == "__main__":
     app.run(debug=True, threaded=True)
