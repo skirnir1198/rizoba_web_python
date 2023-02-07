@@ -17,7 +17,7 @@ def scraping(area,period,occ,obb):
   global driver
   chrome_path = "/Users/miyazakiari/Desktop/デスクトップ/開発/rizoba_app_web_python/chromedriver_mac64/chromedriver"
   options = Options()
-  options.add_argument('--headless') #バックエンド処理
+  # options.add_argument('--headless') #バックエンド処理
   options.add_argument("--remote-debugging-port=9515")
   options.add_argument('--blink-settings=imagesEnabled=false')
   options.add_experimental_option('detach', True) #開いたままにする

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+ <meta charset="utf-8">
+ <title>求人検索</title>
+ <meta name="description" content="ディスクリプションを入力">
+ <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+ <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='css/search_resut.css')}}">
+
+ <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+ </head>
+ <body>
+  <div id="loading">
+    <div class="kvArea" id="loading_box">
+      <div class="img_box"><img src="{{ url_for('static', filename='image/Spinner-3.gif')}}" alt="" class="fadeUp"></div>
+    </div>
+  </div>
+  <div id="select_box">
+    <select name="" id="select">
+      <option value="1">新着順</option>
+      <option value="2">時給順</option>
+    </select>
+  </div>
+  <div id="len"></div>
+  <div id="searchResutBox"></div>
+  <div id="btns"></div>
+ </body>
+ <script>
+    var diveList = [];
+    var humanicList = [];
+    var goodmanList = [];
+    var list = [];
+    var workList = [];
+    var dive =  "{{dive_result}}";
+    var humanic = "{{humanic_result}}"
+    var goodman = "{{goodman_result}}"
+    var humanic_list;
+    var flag = true;
+    var count = 0;
+
+    // 全求人数有無確認
+    if(localStorage.getItem('all_item') == null) {
+      if("{{dive_num}}" != '' || "{{dive_num}}" != undefined) {
+        dive_num =  "{{dive_num}}";
+      }
+      if("{{goodman_num}}" != '' || "{{goodman_num}}" != undefined) {
+        goodman_num =  "{{goodman_num}}";
+      }
+      if("{{humanic_num}}" != '' || "{{humanic_num}}" != undefined) {
+        humanic_num =  "{{humanic_num}}";
+      }
+      var all_item = Number(dive_num) + Number(goodman_num) + Number(humanic_num); 
+      localStorage.setItem('all_item', all_item);
+    }
+
+    all_item = Number(localStorage.getItem('all_item'));
+
+    window.onload = function(){
+      fadeOut();
+      $("#btns").append('<button type="button" class="btn prev">前へ</button><form method="POST" action="/scraping_next" id="form_id"><button type="button" class="btn next" id="next">次へ</button></form>');
+      // dive
+      if(dive.length > 0) {
+        dive = dive.replace(/&#39;/g, '"');
+        dive = dive.split('xxx');
+      }     
+
+      // humanic
+      if(humanic.length > 0) {
+        humanic = humanic.split('xxx');
+        if(localStorage.getItem('humanic_list') == null) {
+          localStorage.setItem('humanic_list', JSON.stringify(humanic));
+        } else {
+          humanic_list = JSON.parse(localStorage.getItem('humanic_list'));
+          humanic = humanic_list.concat(humanic);
+        }
+      }
+
+
+      // goodman
+      if(goodman.length > 0) {
+        goodman = goodman.split('xxx');
+      }
+
+      while (flag) {
+        flag = false
+        if(dive.length > count) {
+          const arr = dive[count].split(',');
+          arr.pop();
+          list.push(arr);
+          flag = true;
+        }
+        if(humanic.length > count) {
+          const arr = humanic[count].split(',');
+          arr.pop();
+          list.push(arr);
+          flag = true;
+        }
+        if(goodman.length > count) {
+          const arr = goodman[count].split('!');
+          arr.pop();
+          list.push(arr);
+          flag = true;
+        }
+        count++
+      }
+
+      // if(localStorage.getItem('list') == null) {
+      //   localStorage.setItem('list', JSON.stringify(list));
+      //   // humanic_list = JSON.parse(localStorage.getItem('list'));
+      // } else {
+      //   humanic_list = JSON.parse(localStorage.getItem('list'));
+      //   var all_list = humanic_list.concat(list);
+      //   list = all_list;
+      // }
+
+      workList = [...list];
+      page_reload();
+    }
+
+  // 表示件数変更時実行
+  function page_reload() {
+    var num = localStorage.getItem("num");
+    var minus = localStorage.getItem("minus");
+    minus = JSON.parse(minus);
+    if(minus == null) {
+      localStorage.setItem("minus",0);
+    }
+    if(num == null) {
+      localStorage.setItem("num",20);
+    }
+    num = Number(localStorage.getItem("num"));
+    minus = Number(localStorage.getItem("minus"));
+    num = JSON.parse(num);
+    console.log(minus);
+
+    var ans = num - minus;
+    if(all_item > ans) {
+      $('.next').prop("disabled", false);
+      if(21 > ans) {
+        $('.prev').prop("disabled", true);
+      } else {
+        $('.prev').prop("disabled", false);
+      }
+    } else {
+      $('.next').prop("disabled", true);
+      $('.prev').prop("disabled", false);
+    }
+    
+    $('#len').empty();
+    $("#len").append(`<p>検索結果:${ans-20}~${ans}件/${all_item}件中</p>`);
+    $("#searchResutBox").empty();
+    for(var i=num-20; i<num; i++) {
+      for(var n=0; n<workList[i].length; n++) {
+        if(n == 0) {
+          var item = `<a href = "${workList[i][1]}" target="_blank" class="searchResultItem"><h3>${workList[i][0]}</h3>`;
+        } else if(n == 2) {
+          item += `<p><i class="fas fa-map-marker-alt"></i>${workList[i][n]}</p>`;
+        } else if(n == 3) {
+          item += `<p><i class="fas fa-user-md"></i>${workList[i][n]}</p>`;
+        } else if(n == 4) {
+          item += `<p><i class="fas fa-money-bill-wave-alt"></i>${workList[i][n]}</p>`;
+        } else if(n == 5 || n == 6 || n == 7) {
+          item += `<p><i class="fas fa-calendar-alt"></i>${workList[i][n]}</p>`;
+        }
+      }
+      item += '</a>'
+      $("#searchResutBox").append(item);
+    }
+
+  }
+
+  // 時給順
+  function hourlyWage(arr) {
+    const list = arr.sort(function(a,b){
+      if( a[4] > b[4] ) return -1;
+      if( a[4] < b[4] ) return 1;
+      return 0;
+    });
+    return list;
+  }
+
+  // 並び替え関数
+  $("#select").change(function() {
+    //選択したvalue値を変数に格納
+    var val = $(this).val();
+    num = 20;
+    if(val == '1') {//新着順
+      workList = [...list];
+      $("#len").empty();
+      $("#len").append(`<p>${num}/${workList.length}</p>`);
+      page_reload();
+    } else if(val == '2') { //時給順
+      workList = [...hourlyWage(workList)];
+      $("#len").empty();
+      $("#len").append(`<p>${num}/${workList.length}</p>`);
+      page_reload();
+    }
+  });
+
+
+  // 次へボタン実装
+  $(document).on('click', '#next', function() {
+      var minus = Number(localStorage.getItem("minus"));
+      if(minus > 0) {
+        console.log(minus);
+        localStorage.setItem('minus',Number(minus) - 20);
+        page_reload();
+        fadeIn();
+        $('html, body').animate({ scrollTop: 0 }, 10);
+        fadeOut();
+      } else {
+        var num = localStorage.getItem("num");
+        num = JSON.parse(num);
+
+        if (num != null){
+          num = JSON.parse(num);
+          localStorage.setItem('num',Number(num) + 20);
+        } else {
+          localStorage.setItem('num', 20);
+        }
+        $("#form_id").submit();
+      }
+    });
+
+
+
+ 
+    // 前へボタン実装
+    $(document).on('click','.prev', function() {
+      // if(num > 20) {
+      var num = localStorage.getItem("minus");
+      if (num != null){
+        num = JSON.parse(num);
+        localStorage.setItem('minus',Number(num) + 20);
+      }
+      page_reload();
+      fadeIn();
+      $('html, body').animate({ scrollTop: 0 }, 10);
+      fadeOut();
+      // }
+    })
+  </script>
+  <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+
+</html>
