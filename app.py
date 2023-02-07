@@ -36,7 +36,7 @@ def next():
 
 @app.route("/top", methods=["POST"])
 def top():
-    return render_template("top.html")
+    return render_template("index.html")
 
 @app.route("/profile", methods=["POST"])
 def profile():
@@ -63,5 +63,5 @@ def inquiry():
     return render_template("inquiry.html")
 
 if __name__ == "__main__":
-    app.run(debug=True, threaded=True)
+    app.run(debug=True, threaded=True, host="0.0.0.0", port=3000)
     # app.run(host="0.0.0.0")
